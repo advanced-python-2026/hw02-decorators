@@ -13,8 +13,8 @@
 
 from __future__ import annotations
 
-import functools
-from typing import Any, Callable, TypeVar
+from collections.abc import Callable
+from typing import Any, TypeVar
 
 F = TypeVar("F", bound=Callable[..., Any])
 
@@ -83,6 +83,7 @@ def memoize(*, ttl: float | None = None) -> Callable[[F], F]:
         def expensive(n: int) -> int:
             return n ** 2
     """
+
     # TODO: реализовать декоратор
     def decorator(func: F) -> F:
         raise NotImplementedError("memoize не реализован")
@@ -114,6 +115,7 @@ def retry(
         def fetch(url: str) -> str:
             ...
     """
+
     # TODO: реализовать декоратор
     def decorator(func: F) -> F:
         raise NotImplementedError("retry не реализован")
@@ -141,6 +143,7 @@ def deprecated(*, message: str = "", removal_version: str | None = None) -> Call
         def old_func() -> None:
             ...
     """
+
     # TODO: реализовать декоратор
     def decorator(func: F) -> F:
         raise NotImplementedError("deprecated не реализован")
@@ -167,6 +170,7 @@ def trace(*, logger_name: str = __name__) -> Callable[[F], F]:
         def compute(x: int) -> int:
             return x * 2
     """
+
     # TODO: реализовать декоратор
     def decorator(func: F) -> F:
         raise NotImplementedError("trace не реализован")
@@ -194,6 +198,7 @@ def throttle(*, rate: float) -> Callable[[F], F]:
         def api_call() -> dict:
             ...
     """
+
     # TODO: реализовать декоратор
     def decorator(func: F) -> F:
         raise NotImplementedError("throttle не реализован")

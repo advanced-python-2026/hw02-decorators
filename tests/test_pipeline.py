@@ -1,9 +1,6 @@
 """Тесты для функционального пайплайна (задание 2.2)."""
 
-import pytest
-
 from hw02.pipeline import compose, filter_by, pipe, sort_by, take
-
 
 # ============================================================
 # pipe

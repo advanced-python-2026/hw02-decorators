@@ -6,12 +6,11 @@
 import logging
 import time
 import warnings
-from typing import Callable
+from collections.abc import Callable
 
 import pytest
 
 from hw02.decorators import curry, deprecated, memoize, retry, throttle, trace
-
 
 # ============================================================
 # Хелпер для пропуска тестов по варианту
@@ -594,6 +593,7 @@ class TestComposability:
 
             assert add(2, 3) == 5
         else:
+
             @dec1
             @dec2
             @validate_types
