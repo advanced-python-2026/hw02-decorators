@@ -158,11 +158,11 @@ class TestValidateTypesNoAnnotations:
     def test_partial_annotations(self) -> None:
         @validate_types
         def func(a: int, b):  # noqa: ANN001, ANN201
-            return a + b
+            return str(a) + str(b)
 
-        assert func(1, 2) == 3
+        assert func(1, 2) == "12"
         # b has no annotation — anything goes
-        assert func(1, "x") == "1x"  # type: ignore[operator]
+        assert func(1, "x") == "1x"
 
     def test_only_return_annotation(self) -> None:
         @validate_types
